@@ -7,17 +7,17 @@ Download source file, Unpack, Build, Install, and create modulefile
 ```console
 ig install nvim
 
-> input where is source
-GitHub
-> input github repo name
-neovim/neovim
-> select release
-NVIM v0.7.0
-> select file
-nvim-linux64.tar.gz
+input where is source
+> GitHub
+input github repo name
+> neovim/neovim
+select release
+> NVIM v0.7.0
+select file
+> nvim-linux64.tar.gz
 unpacking...
-> Input version
-0.7.0
+Input version
+> 0.7.0
 creating modulefile...
 Done!
 ```
