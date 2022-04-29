@@ -5,15 +5,9 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+
+	"github.com/google/go-github/v43/github"
 )
-
-type choiceSource struct {
-	name string
-}
-
-func (c choiceSource) download() string {
-	return "FilePath"
-}
 
 func main() {
 	fmt.Println(selective("Which?", []string{"hogehoge", "fugafuga", "piyopiyo"}))
@@ -22,7 +16,16 @@ func main() {
 func listenSource() {
 	choices := []string{"GitHub"}
 	i := selective("Select source", choices)
-
+	// GitHub
+	if i == 0 {
+		repo_name := question("Enter repository name (e.g. flat35hd99/ig)")
+		// repository service -> ListReleases
+		client := github.NewClient(nil)
+		release, res, err := github.RepositoriesServiceGetRelease(context.Background(), "flat35hd99", "ig", 0)
+		if err != nil {
+			printf("hogehoge")
+		}
+	}
 }
 
 // Show question and return answer
